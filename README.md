@@ -5,7 +5,7 @@ E-commerce FAQ chatbots are automated virtual assistants that provide instant an
 ### Predefined Responses: 
 The chatbot relies on a dataset of predefined question-answer pairs. It does not generate new responses but instead retrieves the most appropriate answer from the existing data.
 ### Similarity Matching: 
-To find the most relevant answer, the chatbot uses TF-IDF vectorization to convert questions into numerical features and calculates cosine similarity to identify the question in the dataset that is most similar to the user's query.
+To find the most relevant answer, the chatbot uses chromadb for creating embeddings and also calculates similarity to identify the question in the dataset that is most similar to the user's query.
 ### Simple Implementation: 
 The chatbot's implementation is straightforward, involving text preprocessing, feature extraction, and similarity computation, making it relatively easy to set up and deploy.
 
@@ -21,6 +21,6 @@ Add fallback responses for queries that the chatbot cannot handle confidently. T
 ### Data Preprocessing:
 The chatbot preprocesses the questions by removing stop words, correcting spelling errors, identifying synonyms, and tokenizing the text. This step cleans and normalizes the input data.
 ### Feature Extraction:
-The code uses a TF-IDF Vectorizer to convert the preprocessed questions into numerical feature vectors. This allows the chatbot to mathematically compare the similarity between the user's query and the predefined questions.
+The code uses chromadb, a library for managing and querying embeddings. This allows the chatbot to mathematically compare the similarity between the user's query and the predefined questions.
 ### Response Retrieval:
-To find the most relevant response, the chatbot calculates the cosine similarity between the user's query vector and the vectors of all predefined questions. It then returns the answer corresponding to the question with the highest similarity score.
+To find the most relevant response, the chatbot calculates the similarity between the user's query vector and the vectors of all predefined questions. It then returns the answer corresponding to the question with the highest similarity score.
